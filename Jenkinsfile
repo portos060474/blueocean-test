@@ -8,7 +8,12 @@ pipeline {
     }
     stage('auth') {
       steps {
-        build 'test-klam'
+        build 'inject klam'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'aws ec2 describe-instances --region eu-west-1'
       }
     }
   }
