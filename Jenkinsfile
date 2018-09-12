@@ -13,7 +13,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'echo dude'
+        sh 'env'
         sh 'aws ec2 describe-instances --region eu-west-1'
       }
     }
